@@ -1,0 +1,35 @@
+name: scrna
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Python 基础
+  - python=3.9
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - openpyxl          # 可选，保留
+  - ipykernel
+  - bioconductor-deseq2  
+  - adjusttext          # conda 中包名为 adjusttext (注意全小写)
+  - mygene              # mygene 包
+  - matplotlib-venn
+  # Python 单细胞生态
+  - scanpy
+  - anndata
+  - leidenalg
+  - python-igraph
+  - umap-learn
+
+  # R 及单细胞核心包
+  - r-base=4.2        # 或 4.3，与 Seurat5 兼容
+  - r-seurat=4.4.0    # 或 5.0.0（需 R>=4.1）
+  - r-dplyr
+  - r-ggplot2
+  - r-patchwork
+  - bioconductor-limma
+
+  # Python-R 桥接
+  - rpy2
