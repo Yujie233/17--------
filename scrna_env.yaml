@@ -1,8 +1,10 @@
 name: scrna
+channel_priority: strict
 channels:
   - conda-forge
   - bioconda
-  - defaults
+  
+  #- defaults
 dependencies:
   # Python 基础
   - python=3.9
@@ -22,14 +24,20 @@ dependencies:
   - leidenalg
   - python-igraph
   - umap-learn
+  - networkx
 
   # R 及单细胞核心包
-  - r-base=4.2        # 或 4.3，与 Seurat5 兼容
-  - r-seurat=4.4.0    # 或 5.0.0（需 R>=4.1）
+  - r-base        # 或 4.3，与 Seurat5 兼容
+  - r-seurat    # 或 5.0.0（需 R>=4.1）
   - r-dplyr
   - r-ggplot2
   - r-patchwork
   - bioconductor-limma
+  - bioconductor-clusterprofiler   # 修正：原 clusterProfiler
+  - bioconductor-org.hs.eg.db     # 修正：原 org.Hs.eg.db
+  - r-biocmanager    
+  - r-stringi
+  - r-igraph>=1.5.0
 
   # Python-R 桥接
   - rpy2
